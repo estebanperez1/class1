@@ -9,47 +9,258 @@
 		<link rel="stylesheet" href="css/bootstrap.css">
 		<style>
 			div{
-				width:30%;
-				border-color:black;
-				border-style:solid;
-				border-width:3px;
-			}
+			} 
 			div img
 			{
 				width:100%;
 			}
+			.tag
+			{
+				color: dodgerblue;
+			}
+			.att
+			{
+				color:olivedrab
+			}
+			.value
+			{
+				color:orange;
+			}
+			.codeBlock
+			{
+				background-color:lightgray;
+				padding:10px 30px;
+				border-style: inset;
+				border-radius:5px;
+				margin:20px 0px;
+			}
+			html
+			{
+				padding:50px 5%;
+			}
+			.card
+			{
+				border-radius:5px;
+				box-shadow: 0px 0px 5px #888888;
+				overflow:hidden;
+				background:#FEFEFE;
+				padding:2% 5%;
+				
+			}
+			.project-card
+			{
+				transition: all 1s;
+				width:30%;
+				float:left;
+				margin:1.6666%;
+				text-align:center;
+			}
+			.pointer { 
+				animation-duration : 2s ; 
+				animation-name : spin ; 
+				animation-iteration-count : infinite ; 
+				animation-direction : alternate ; 
+				transform-origin:center center;
+				height : 100px ; 
+				width : 100px ; 
+				background-color : red ; 
+				position:absolute;
+			}
+			@keyframes spin 
+			{
+			    from{
+					transform:translate(0px) rotate(0deg) ;
+				}to {
+					transform:translate(500px) rotate(360deg);
+				}
+			} 
+			#interactiveDiv { 
+				transition : all 1s ; 
+				height : 100px ; 
+				width : 100px ; 
+				background-color : red ; 
+			}
+			#interactiveDiv:hover { 
+				height : 200px ; 
+				width : 200px ; 
+				background-color : blue ; 
+			}
 		</style>
 	</head>
 	<body>
-		<h1>Hello, World!</h1>
-		<P>
-			I am me :)
-		</P>
-		Favorite foods
-		<ul>
-			<li>pizza</li>
-			<li>burritos</li>
-			<li>tacos</li>
-		</ul>
-		Favorite Disney Movies
-		<ol>
-			<li>Star Wars: The Force Awakens</li>
-			<li>Little Mermaid</li>
-			<li>Frozen</li>
-		</ol>
-		<div>
-			<h3>
-				Pizza
-			</h3>
-			<img src="http://www.cicis.com/media/1138/pizza_trad_pepperoni.png">
-			<h2>
-				Favorite Toppings
-			</h2>
-			<ul>
-				<li>pepperoni</li>
-				<li>mushrooms</li>
-			</ul>
+		<div class="card">
+			<h1>
+				How do we make videos?
+			</h1>
+			<h3>There are a few ways to do it, the first, and most common is an iframe, and for this lesson we will use iframes.</h3>
+			<div class = "codeBlock">
+				<span class="tag">&#60;iframe</span>
+				<span class="att">width</span>
+				<span>=</span>
+				<span class="value">"560"</span>
+				<span class="att">height</span>
+				<span>=</span>
+				<span class="value">"315"</span>
+				<span class="att">src</span>
+				<span>=</span>
+				<span class="value">"https://www.youtube.com/embed/_dyUnMntNXQ"</span>
+				<span class="att">allowfullscreen</span>
+				<span class="tag">&#62;&#60;/iframe&#62;</span>
+			</div>
+			<br>
+
+			<iframe width="560" height="315" src="https://www.youtube.com/embed/_dyUnMntNXQ" allowfullscreen></iframe>
+
 		</div>
+
+		<div class="card">
+			<h1>
+				How do we add animations?
+			</h1>
+			<h3>
+				animations are done using css, there are a few ways to do this and I will show a couple below.
+			</h3>
+			<h4>
+				The first way is by doing a css animation the animation definition is shown below
+			</h4>
+			<div class = "codeBlock">
+				@keyframes spin <br>{<br><span class="att">&nbsp;&nbsp;&nbsp;&nbsp;from</span>{<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;transform:translate(0px) rotate(0deg) ;<br>&nbsp;&nbsp;&nbsp;&nbsp;}<span class="att">to</span>
+					{<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;transform:translate(500px) rotate(360deg) ;<br>&nbsp;&nbsp;&nbsp;&nbsp;}<br>}
+			</div>
+			<h4>
+				Next we need to apply the css to an element. In this case I will be using a class to apply the style
+			</h4>
+			<div class="codeBlock">
+				<span class="tag">.pointer</span>
+				<span>{</span>
+				<br>
+				<span class="att">&nbsp;&nbsp;&nbsp;&nbsp;animation-duration</span>
+				<span>:</span>
+				<span class="value">2s</span>
+				<span>;</span>
+				<br>
+				<span class="att">&nbsp;&nbsp;&nbsp;&nbsp;animation-name</span>
+				<span>:</span>
+				<span class="value">spin</span>
+				<span>;</span>
+				<br>
+				<span class="att">&nbsp;&nbsp;&nbsp;&nbsp;animation-iteration-count</span>
+				<span>:</span>
+				<span class="value">infinite</span>
+				<span>;</span>
+				<br>
+				<span class="att">&nbsp;&nbsp;&nbsp;&nbsp;animation-direction</span>
+				<span>:</span>
+				<span class="value">alternate</span>
+				<span>;</span>
+				<br>
+				<span class="att">&nbsp;&nbsp;&nbsp;&nbsp;height</span>
+				<span>:</span>
+				<span class="value">100px</span>
+				<span>;</span>
+				<br>
+				<span class="att">&nbsp;&nbsp;&nbsp;&nbsp;width</span>
+				<span>:</span>
+				<span class="value">100px</span>
+				<span>;</span>
+				<br>
+				<span class="att">&nbsp;&nbsp;&nbsp;&nbsp;background-color</span>
+				<span>:</span>
+				<span class="value">red</span>
+				<span>;</span>
+				<br>
+				<span class="att">&nbsp;&nbsp;&nbsp;&nbsp;postition</span>
+				<span>:</span>
+				<span class="value">absolute</span>
+				<span>;</span>
+				<br>
+				<span>}</span>
+			</div>
+			<h4>
+				Lastly we want to make the div that the animation gets applied to.
+			</h4>
+			<div class="codeBlock">
+				<span class="tag">&#60;div</span>
+				<span class="att">class</span>
+				<span>=</span>
+				<span class="value">"pointer"</span>
+				<span class="tag">&#62;&#60;/div&#62;</span>
+			</div>
+			<div class="pointer"></div>
+			<div style="width:100px;height:100px;"></div>
+			<h1>
+				The second type of animation relies on a user for it to start.
+			</h1>
+			<h3>
+				The first thing we do is add a transition to a class/tag/id. In this example we will be using an ID
+			</h3>
+			<div class="codeBlock">
+				<span class="tag">#interactiveDiv</span>
+				<span>{</span>
+				<br>
+				<span class="att">&nbsp;&nbsp;&nbsp;&nbsp;transition</span>
+				<span>:</span>
+				<span class="value">all 1s</span>
+				<span>;</span>
+				<br>
+				<span class="att">&nbsp;&nbsp;&nbsp;&nbsp;height</span>
+				<span>:</span>
+				<span class="value">100px</span>
+				<span>;</span>
+				<br>
+				<span class="att">&nbsp;&nbsp;&nbsp;&nbsp;width</span>
+				<span>:</span>
+				<span class="value">100px</span>
+				<span>;</span>
+				<br>
+				<span class="att">&nbsp;&nbsp;&nbsp;&nbsp;background-color</span>
+				<span>:</span>
+				<span class="value">red</span>
+				<span>;</span>
+				<br>
+				<span>}</span>
+			</div>
+			<h3>
+				If any of the css for this element changes it will change over the duration of 1 second
+			</h3>
+			<h4>
+				We need to set a condition for the animation to fire. We will be using hover
+			</h4>
+			<div class="codeBlock">
+				<span class="tag">#interactiveDiv:hover</span>
+				<span>{</span>
+				<br>
+				<span class="att">&nbsp;&nbsp;&nbsp;&nbsp;height</span>
+				<span>:</span>
+				<span class="value">200px</span>
+				<span>;</span>
+				<br>
+				<span class="att">&nbsp;&nbsp;&nbsp;&nbsp;width</span>
+				<span>:</span>
+				<span class="value">200px</span>
+				<span>;</span>
+				<br>
+				<span class="att">&nbsp;&nbsp;&nbsp;&nbsp;background-color</span>
+				<span>:</span>
+				<span class="value">blue</span>
+				<span>;</span>
+				<br>
+				<span>}</span>
+			</div>
+			<h3>
+				last thing that we need to do is make a div with the id of interactiveDiv.
+			</h3>
+			<div class="codeBlock">
+				<span class="tag">&#60;div</span>
+				<span class="att">id</span>
+				<span>=</span>
+				<span class="value">"interactiveDiv"</span>
+				<span class="tag">&#62;&#60;/div&#62;</span>
+			</div>
+			
+			<div id="interactiveDiv"></div>
+		</div>
+		
 		
 		<!--This is how you import javascript, a file containing functions to be used on your page-->
 				<script src="js/utils.js"></script>
